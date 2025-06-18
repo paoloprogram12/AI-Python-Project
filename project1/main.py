@@ -14,11 +14,17 @@ def calculator(a: float, b: float) -> str:
     print("Tool has been called")
     return f"The sum of {a} and {b} is {a + b}"
 
+@tool
+def say_hello(name: str) -> str:
+    """Useful for greeting the user, e.g. when the user says hi"""
+    print("Tool has been called")
+    return f"Hello {name}, I hope you are having a splendid day today"
+
 def main():
     model = ChatOpenAI(temperature=0) # prevents randomness
 
     # tool is a external service that the agent can call to and utilize
-    tools = [calculator]
+    tools = [calculator, say_hello]
     agent_executor = create_react_agent(model, tools) # prebuilt agent framework
 
     print("Welcome! I'm your AI assistant. Type 'quit' to exit.")
@@ -27,7 +33,7 @@ def main():
     while True:
         user_input = input("\nYou: ").strip() # .strip removes whitespaces
 
-        if (user_input == quit): break
+        if (user_input == "quit"): break
 
         print("\nAssistant: ", end="")
 
