@@ -19,3 +19,20 @@ def main():
 
     while True:
         user_input = input("\nYou: ").strip() # .strip removes whitespaces
+
+        if (user_input == quit): break
+
+        print("\nAssistant: ", end="")
+
+        # chunks are parts of a response coming from our agent
+        for chunk in agent_executor.stream( # stream wte the output
+            {"messages": [HumanMessage(content=user_input)]} # passes the user_input message into the AI
+        ):
+            if "agent" in chunk and "messages" in chunk["agent"]:
+                for message in chunk["agent"]["messages"]:
+                    print(message.content, end="")
+        print()
+
+# runs main function
+if __name__ == "__main__":
+    main()
