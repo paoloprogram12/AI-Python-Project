@@ -11,6 +11,7 @@ load_dotenv()
 def main():
     model = ChatOpenAI(temperature=0) # prevents randomness
 
+    # tool is a external service that the agent can call to and utilize
     tools = []
     agent_executor = create_react_agent(model, tools) # prebuilt agent framework
 
