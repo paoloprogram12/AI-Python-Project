@@ -62,7 +62,7 @@ if analyze and uploaded_file:
             max_tokens=1000
         )
         st.markdown("### Analysis Results")
-        st.markdowns(response.choices[0].message.content)
+        st.markdown(response.choices[0].message.content)
 
     except Exception as e:
         st.error(f"An error occureed: {str(e)}")
