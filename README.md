@@ -90,7 +90,7 @@ A lightweight Streamlit web app that uses TensorFlow's pre-trained MobileNetV2 m
 ### ▶️ How to Run
 1. Install Dependencies:
    ```bash
-   pip install streamlit tensorflow opencv-python pillow
+   pip install streamlit tensorflow opencv-python
 2. Run the app:
    ```bash
    streamlit run main.py
