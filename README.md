@@ -1,4 +1,4 @@
-# 🧠 AI Projects Portfolio
+# 🧠 Simple AI Projects Portfolio
 
 This repository contains a collection of beginner-friendly but powerful AI-based projects built using Python, LangChain, Streamlit, TensorFlow, and OpenAI. Each project showcases a different application of AI—from chatting with a custom agent, to resume review, to image classification.
 
